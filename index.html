@@ -163,67 +163,94 @@ footer{
     text-align:center;
 }
 
-/* MOBIL */
+/* MOBIL - OPTIMIZE EDILDI */
 
 @media(max-width:768px){
 
     nav{
-        flex-direction:column;
-        gap:15px;
-        padding:15px;
+        flex-direction: row; /* Alt alta binmek yerine şık bir şekilde yan yana kalsınlar */
+        justify-content: space-between;
+        padding: 15px 20px;
+        background: rgba(0,0,0,.80); /* Mobilde okunurluk için hafif koyulaştırıldı */
     }
 
     .logo{
-        font-size:28px;
+        font-size: 22px; /* Ekranı kaplamayacak kibar bir logo boyutu */
+        letter-spacing: 1px;
     }
 
     .menu{
-        flex-wrap:wrap;
-        justify-content:center;
-        gap:15px;
+        gap: 12px;
     }
 
     .menu a{
-        font-size:15px;
+        font-size: 13px; /* Mobilde daha minimalist ve şık durması için küçültüldü */
+        font-weight: 600;
     }
 
     .hero{
-        min-height:70vh;
-        padding-top:180px;
+        min-height: 85vh; /* İçeriğin dikeyde tam oturması sağlandı */
+        padding-top: 100px; 
     }
 
     .hero-content h1{
-        font-size:58px;
+        font-size: 64px; /* Ekran görüntüsündeki devasa taşma düzeltildi */
+        letter-spacing: 2px;
     }
 
     .hero-content p{
-        font-size:18px;
-        letter-spacing:2px;
+        font-size: 16px;
+        letter-spacing: 1px;
+        margin-top: 5px;
+        opacity: 0.8;
     }
 
     .albumler{
-        padding:60px 20px;
+        padding: 50px 0px 50px 20px; /* Kaydırma efekti için sağ padding sıfırlandı */
     }
 
     .albumler h2{
-        font-size:42px;
+        font-size: 32px;
+        text-align: left; /* Sol kenara yaslanarak modern bir görünüm kazandı */
+        margin-bottom: 30px;
+        letter-spacing: 1px;
     }
 
+    /* Spotify tarzı lüks yatay kaydırma düzeni */
     .grid{
-        grid-template-columns:1fr;
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding-right: 20px;
+        gap: 20px;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .grid::-webkit-scrollbar {
+        display: none; /* Çirkin kaydırma çubuğunu gizler */
     }
 
     .kart{
-        height:420px;
+        flex: 0 0 260px; /* Kartların mobildeki ideal genişliği */
+        height: 380px;   /* Telefonlar için ideal yükseklik */
+        scroll-snap-align: start;
+        border-radius: 15px;
     }
 
     .kart-yazi h3{
-        font-size:24px;
+        font-size: 20px;
+    }
+    
+    .kart-yazi p{
+        font-size: 12px;
+        opacity: 0.7;
     }
 
     .iletisim{
-        font-size:18px;
-        line-height:40px;
+        font-size: 16px;
+        line-height: 35px;
+        text-align: left;
+        padding-right: 20px;
     }
 }
 
